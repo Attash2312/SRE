@@ -15,6 +15,7 @@ These notes are written to match your syllabus topics and the style of questions
 8. `08_requirements_management.md`
 9. `09_requirements_traceability.md`
 10. `10_past_papers_solved.md` (all solved + extra exam-style questions)
+11. `11_sample_srs_fastkart.md` (mini SRS-style reference + templates)
 
 ## How to prepare quickly (suggested)
 - Day 1: Chapters 1 + 3–5 + practice 2 use-case diagrams.
