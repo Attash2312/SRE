@@ -31,6 +31,23 @@ A requirement is a **capability**, **condition**, or **quality** needed by a sta
 - **Functional requirement (FR):** what the system **does** (features/behaviors).
 - **Non-functional requirement (NFR):** how well / under what constraints (quality attributes, constraints).
 
+## 2.1) Requirement writing rules (what examiners expect)
+These are the "marks magnets":
+1) **Use “shall”** for mandatory requirements (especially FRs). Avoid “will” and vague “should” unless you mean optional.
+2) **Atomic:** one requirement per statement (avoid “and/or”).
+3) **Verifiable:** include measurable acceptance criteria (time, accuracy, uptime, error rate, security events).
+4) **No ambiguity:** remove words like “fast”, “easy”, “good”, “etc.”
+5) **Separate policies/mandates:** business rules + compliance constraints should be stated clearly and then traced to FRs.
+
+### Templates + examples (User vs FR vs NFR vs constraint)
+| Type | Template | Example |
+|---|---|---|
+| User requirement | As a `<role>`, I want `<goal>` so that `<benefit>`. | “As a customer, I want to save my address so I can checkout faster.” |
+| FR | The system **shall** `<behavior>` [when `<condition>`]. | “The system shall allow a logged-in user to save up to 3 shipping addresses.” |
+| NFR (Performance) | The system **shall** `<metric>` `<threshold>` [under `<load>`]. | “The system shall load the cart page in ≤ 2 seconds for 95% requests under 100 concurrent users.” |
+| Constraint/Compliance | The system **shall comply with** `<standard>` / **shall** `<restriction>`. | “The system shall comply with PCI-DSS for card payments.” |
+| Business rule | Policy statement (drives FRs). | “Refund only within 7 days.” |
+
 ### Product vs Project requirements (often confused)
 - **Product requirements:** implemented in the software (belongs in SRS/backlog).
 - **Project requirements:** needed to deliver project but not software behavior (training, docs, migration, beta, legal).

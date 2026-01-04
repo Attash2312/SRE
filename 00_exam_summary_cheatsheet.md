@@ -34,6 +34,24 @@ RE = identifying, eliciting, analyzing, specifying, validating, and managing sta
 
 ---
 
+## Requirement writing rules (exam-scoring)
+1) Use **“shall”** for mandatory requirements (FRs and testable NFR targets).
+2) One statement = **one requirement** (atomic). Split “and/or” requirements.
+3) Make it **verifiable**: add metric + threshold + conditions (load, device, time window).
+4) Avoid ambiguous words: *fast, good, user-friendly, etc.* Replace with a measurable criterion.
+5) If it’s mandated (law/standard/tech choice), write it as a **constraint/compliance requirement**.
+
+### Quick templates + examples (memorize)
+| Kind | Template | Good example |
+|---|---|---|
+| User requirement | As a `<role>`, I want `<goal>` so that `<benefit>`. | “As a customer, I want to track my order so I can plan delivery.” |
+| Functional requirement (FR) | The system **shall** `<behavior>` [when `<condition>`]. | “The system shall allow a registered user to cancel an order before dispatch.” |
+| Non-functional requirement (NFR) | The system **shall** `<quality>` `<metric>` [under `<load>`]. | “The system shall return search results in ≤2s for 95% requests under 100 users.” |
+| Constraint / compliance | The system **shall comply with** `<standard>` / **shall** `<restriction>`. | “The system shall comply with PCI-DSS for card payments.” |
+| Business rule | Policy: `<rule>` (then derive FRs). | “Refund only within 7 days.” |
+
+---
+
 ## Product vs Project requirements
 - **Product requirements**: built into the software (go in SRS/backlog).
 - **Project requirements**: needed to deliver project (training, docs, migration, beta, legal).

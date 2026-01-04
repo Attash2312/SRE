@@ -59,11 +59,11 @@ flowchart LR
   RU --> UC6
   RU --> UC10
 
-  UC6 -. <<include>> .-> UC7
-  UC6 -. <<include>> .-> UC8
-  UC6 -. <<include>> .-> UC9
+  UC6 -.->|include| UC7
+  UC6 -.->|include| UC8
+  UC6 -.->|include| UC9
 
-  UC11 -. <<extend>> .-> UC6
+  UC11 -.->|extend| UC6
 
   PG --> UC9
   SP --> UC7
@@ -152,6 +152,8 @@ The table in the pasted paper is partially formatted; I’ll solve using a **sta
   - Cost% = 2/5*100 = **40%**
   - Risk% = 2/7*100 ≈ **28.57%**
   - Priority = 100 / (40 + 28.57) ≈ **1.458**
+
+
 - FR-02:
   - Value% = 0/4*100 = **0%**
   - Cost% = 3/5*100 = **60%**
@@ -250,8 +252,8 @@ A --> U3
 A --> U4
 A --> U5
 A --> U6
-U6 -. <<include>> .-> U8
-U6 -. <<include>> .-> U7
+U6 -.->|include| U8
+U6 -.->|include| U7
 ```
 
 ---
@@ -322,7 +324,7 @@ U --> UC1
 U --> UC2
 U --> UC3
 U --> UC4
-UC4 -. <<include>> .-> UC5
+UC4 -.->|include| UC5
 D --> UC4
 ```
 
@@ -389,8 +391,8 @@ DR --> U5
 OB --> U5
 DR --> U6
 OB --> U6
-U7 -. <<extend>> .-> U6
-U8 -. <<extend>> .-> U3
+U7 -.->|extend| U6
+U8 -.->|extend| U3
 VC --> U6
 VC --> U7
 BS --> U8
@@ -443,22 +445,25 @@ flowchart LR
 
 #### B) Feature tree (FastKart)
 ```mermaid
-mindmap
-  root((FastKart))
-    Catalog
-      Browse
-      Search
-      Recommendations
-    Orders
-      Place Order
-      Real-time Tracking
-      Cancel Order
-    Loyalty
-      Earn Points
-      Redeem Rewards
-    Payments
-      Card
-      Wallet
+flowchart TB
+  Root[FastKart]
+  Root --> Catalog[Catalog]
+  Catalog --> Browse[Browse]
+  Catalog --> Search[Search]
+  Catalog --> Reco[Recommendations]
+
+  Root --> Orders[Orders]
+  Orders --> Place[Place Order]
+  Orders --> Track[Real-time Tracking]
+  Orders --> Cancel[Cancel Order]
+
+  Root --> Loyalty[Loyalty]
+  Loyalty --> Earn[Earn Points]
+  Loyalty --> Redeem[Redeem Rewards]
+
+  Root --> Payments[Payments]
+  Payments --> Card[Card]
+  Payments --> Wallet[Wallet]
 ```
 
 #### C) Event list (FastKart)

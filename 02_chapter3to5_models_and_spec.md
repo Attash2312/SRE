@@ -30,23 +30,26 @@ flowchart TB
 
 ### C) Feature tree (scope at a glance)
 ```mermaid
-mindmap
-  root((Online Shopping))
-    Catalog
-      Browse
-      Search
-      Item Details
-    Cart
-      Add/Remove
-      Update Quantity
-    Checkout
-      Shipment Options
-      Payment
-      Confirmation
-    Account
-      Register
-      Login
-      Order History
+flowchart TB
+  Root[Online Shopping]
+  Root --> Catalog[Catalog]
+  Catalog --> Browse[Browse]
+  Catalog --> Search[Search]
+  Catalog --> Details[Item Details]
+
+  Root --> Cart[Cart]
+  Cart --> AddRemove[Add/Remove]
+  Cart --> UpdateQty[Update Quantity]
+
+  Root --> Checkout[Checkout]
+  Checkout --> Ship[Shipment Options]
+  Checkout --> Pay[Payment]
+  Checkout --> Confirm[Confirmation]
+
+  Root --> Account[Account]
+  Account --> Register[Register]
+  Account --> Login[Login]
+  Account --> History[Order History]
 ```
 
 ### D) Event list (name events; responses go into FRs)
