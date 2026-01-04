@@ -99,11 +99,11 @@ I --> T[Testing]
 
 ```mermaid
 flowchart LR
-A[Elicitation] --> B[Analysis & Negotiation]
-B --> C[Specification (SRS)]
-C --> D[Validation]
-D --> E[Management & Traceability]
-E --> A
+A[Elicitation] --> B[Analysis & Negotiation];
+B --> C[Specification (SRS)];
+C --> D[Validation];
+D --> E[Management & Traceability];
+E --> A;
 ```
 
 ## 7) Scenario mini-practice (like your exam)
